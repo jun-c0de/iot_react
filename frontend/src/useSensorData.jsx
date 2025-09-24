@@ -7,8 +7,10 @@ export default function useSensorData() {
         const fetchData = async () => {
             try {
                 // 환경변수에서 백엔드 API URL 가져오기
-                const apiUrl = import.meta.env.VITE_API_URI;
-                const res = await fetch(`${apiUrl}/sensor`);  // GET 센서 데이터
+                const apiUrl = import.meta.env.VITE_API_URL; // 여기 수정
+                const res = await fetch(`${apiUrl}/api/sensor`);  // Cloudtype 서버의 최종 URL
+
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                 const json = await res.json();
 
                 // timestamp 기준 내림차순 정렬 (최신 데이터가 앞)
