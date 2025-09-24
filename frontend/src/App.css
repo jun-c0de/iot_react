@@ -53,14 +53,14 @@
 
 .bar-graph {
   display: flex;
+  flex-direction: row;      /* 왼쪽 → 오른쪽으로 통일 */
   align-items: flex-end;
   gap: 5px;
   height: 150px;
 }
 
 .bar {
-  flex: 1;
-  /* 균등 배치 */
+  flex: 1;                  /* 균등 배치 */
   margin: 0 2px;
   background-color: green;
   display: flex;
@@ -74,13 +74,12 @@
   font-size: 10px;
   color: #333;
   position: absolute;
-  top: -15px;
-  /* 막대 위 표시 */
+  top: -15px;               /* 막대 위 표시 */
 }
 
 .bar-timestamps {
   display: flex;
-  flex-direction: row-reverse; /* 오른쪽에서 왼쪽으로 정렬 */
+  flex-direction: row;      /* 왼쪽 → 오른쪽으로 통일 */
   justify-content: space-between;
   margin-top: 5px;
   font-size: 12px;

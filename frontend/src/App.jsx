@@ -5,7 +5,9 @@ import './App.css'
 export default function App() {
   const data = useSensorData();
   const latest = data[0] || {}; // 최신 데이터
-  const recentData = data.slice(0, 10).reverse(); // 최근 10개 데이터, 왼쪽이 오래된 데이터
+  // 최신 10개 데이터, 왼쪽=오래된, 오른쪽=최신
+const recentData = data.slice(0, 10);
+ // 최근 10개 데이터, 왼쪽이 오래된 데이터
 
   return (
     <div className="app-container">
